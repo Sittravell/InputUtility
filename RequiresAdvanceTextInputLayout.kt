@@ -1,3 +1,4 @@
+/* REPLACE: With your application id and appropriate path */
 package com.example.templates.utils.inputUtils
 
 import com.google.android.material.textfield.TextInputLayout
