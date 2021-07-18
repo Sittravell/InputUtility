@@ -1,3 +1,4 @@
+/* REPLACE: With your application id and appropriate path */
 package com.example.templates.utils.inputUtils
 
 import android.content.res.ColorStateList
@@ -8,7 +9,6 @@ import com.google.android.material.textfield.TextInputLayout
 
 interface RequiresETUtils : RequiresAdvanceTextInputLayout {
     fun TextInputLayout.changeFocusAfter(t: TextInputLayout, maxChar: Int){
-        Log.d("focustest", "Setting change focus of ${this.id} to ${t.id} after $maxChar char")
         editText?.addTextChangedListener {
             if(it?.length ?: 0 >= maxChar){
                 t.editText?.requestFocus()
@@ -32,7 +32,7 @@ interface RequiresETUtils : RequiresAdvanceTextInputLayout {
         l: ((Boolean, String) -> Unit)? = null
     ) {
         setup()
-        val emptyMess = "$hint wajib diisi."
+        val emptyMess = "$hint is required."
         if (editText == null) {
             l?.invoke(false, emptyMess)
             helperText = emptyMess
